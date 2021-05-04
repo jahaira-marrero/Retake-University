@@ -1,0 +1,27 @@
+<h1> Instructor Information </h1>
+
+<h3> <%= @instructor.name %> </h3> 
+
+<hr>
+<h4> <p>  Courses </p> </h4>
+
+<ul>
+    <% @instructor.courses.each do |instructor_inst| %>
+        <li> <%= link_to instructor_inst.name, course_path(instructor_inst) %>  </li>
+    <%end%>
+
+</ul>
+
+<h2> Tutoring Schedule</h2>
+<hr>
+    <% @instructor.tutorings.each do |tutor|%>
+        <h3> <%= tutor.week_day %> at <%= tutor.time %> </h3>
+    <% end %>
+<br>
+<hr>
+<br>
+<%= link_to "Back to Instructors", instructors_path %>
+<br>
+<%= link_to "Back to Students", students_path %>
+<br>
+<%= link_to "Back to Courses", courses_path %>

@@ -1,0 +1,21 @@
+<h1> <%= @course.name %> Information </h1>
+<br>
+<h3>Seat Limit: <%= @course.seat_limit() %> </h3>
+<h3> Open Seats: <%= @course.open_seats %> </h3>
+<br>
+<h3>Instructor: <%= link_to @course.instructor.name, instructor_path(@course.instructor) %> </h3>
+<br>
+<h3>Schedule: <%= @course.week_day %> - <%=@course.time %> </h3>
+<hr>
+<h2> Enrolled Students</h2>
+<ol>
+    <% @course.grades.each do |course_inst| %>
+    <li>
+        <%= link_to course_inst.student.name, student_path(course_inst.student) %>
+    </li>
+    <% end %>
+</ol>
+<br>
+<%= link_to "Back to Courses", courses_path %>
+<br>
+<%= link_to "Enroll in a Course", new_grade_path%>
