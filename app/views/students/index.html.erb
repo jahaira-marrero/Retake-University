@@ -1,15 +1,24 @@
-<h1> All Students </h1>
+<header>
+<nav style="text-align: right;">
+<a href="/"><%= link_to "Back to Courses", courses_path %></a>
+<a href="/link"><%= link_to "Create a New Student", new_student_path %></a>
+</nav></header>
 
-<ol> 
-    <% @students.each do |student| %>
-     <li>
-        <%= link_to student.name, student_path(student) %>
-        <%end%>
-    </li>
-     
-</ol>
-
-<br>
-<%= link_to "Back to Courses", courses_path %>
-<br>
-<%= link_to "Create a New Student", new_student_path %>
+<article>
+<h1 style="text-align: center;">Retake University</h1>
+<p>Retake University is geared towards helping all bootcamp students retake their code challenges! No coder is left behind.</p>
+</article>
+<article>
+<h2>All Students</h2>
+<p>
+    <ol> 
+     <% @students.each do |student| %>
+        <li>
+         <%= link_to student.name, student_path(student) %>
+            <%end%>
+     </li> 
+    </ol>
+</p>
+</article>
+<footer>
+<address>Contact <a href="mailto:fake@fakeemail.com">Us</a></address></footer>
