@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get '/home', to: 'application#home'
+
   get '/grades/new', to: 'grades#new', as: "new_grade"
   post '/grades', to: 'grades#create'
  
