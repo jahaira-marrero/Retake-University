@@ -1,4 +1,64 @@
-<h1> Edit <%= @student.name %> </h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+    <title>Modal Cards - Free Bulma template</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/css/OverlayScrollbars.min.css'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- Bulma Version 0.9.0-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/hero.css">
+    <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
+    <style>
+    .columns:nth-child(3)
+    {margin-top: -10rem;}
+    </style>
+  </head>
+  <body>
+           <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a class="navbar-item" href="../">
+                            <img src="https://coursereport-s3-production.global.ssl.fastly.net/uploads/school/logo/8/original/flatironschool.png" alt="Logo">
+                        </a>
+                        <span class="navbar-burger burger" data-target="navbarMenu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+                    <div id="navbarMenu" class="navbar-menu">
+                        <div class="navbar-end">
+                            <div class="tabs is-right">
+                                <ul>
+                                    <li class="is-active"><a href="/home">Home</a></li>
+                                    <li><a href="/students">Students</a></li>
+                                    <li><a href="/courses">Courses</a></li>
+                                    <li><a href="/instructors">Instructors</a></li>
+                                    <li><a href="">Grades</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+<div class="container">
+      <div class="section">
+        <div class="columns">
+          <div class="column has-text-centered">
+            <h1 class="title" style="color: black;">Update <%= @student.name %>'s Information </h1>
+          </div>
+        </div>
+    </div>
+</div>
+
 <% if flash[:errors]%>
     <ul>
         <% flash[:errors].each do |error|%>
@@ -10,15 +70,34 @@
 <%end%>
 
 <%= form_for @student do |f| %>
-    <%= f.label :name, "Name"%>
-    <%= f.text_field :name %>
-    <%= f.label :age, "Age"%>
-    <%= f.number_field :age %>
-    <%= f.label :major, "Major" %>
-        <%= f.text_field :major %>
-<%= f.submit "Edit Student" %>
+
+<div class="field">
+    <%= f.label :name, class: "label" %>
+<div class="control">
+  <%= f.text_field :name, class: "input" %>
+  </div>
+</div>
+
+<div class="field">
+    <%= f.label :age, class: "label" %>
+<div class="control">
+  <%= f.number_field :age, class: "select" %>
+  </div>
+</div>
+
+<div class="field">
+    <%= f.label :major, class: "label" %>
+<div class="control">
+  <%= f.text_field :major, class: "input" %>
+  </div>
+</div>
+
+
+<div class="field is-grouped">
+<%= f.submit class: "button is-info" %>
+</div>
+
 
 <% end %>
 
-<br>
-<%= link_to "Back to Courses", courses_path %>
+</html>
