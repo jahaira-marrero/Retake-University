@@ -60,10 +60,8 @@
 
 <h2> Major - <%= @student.major %> </h2>
 <h2> Age - <%= @student.age %> </h2>
-
-<hr> 
-
-<h1> Course Grades </h1> 
+<br>
+<h5 class="title is-5"> Current Course and Grade </h5> 
 
 <ol> 
     <% @student.grades.each do |grade_inst| %>
@@ -75,11 +73,21 @@
 
 <hr> 
 
+<nav class="breadcrumb is-centered">
+    <ul>
+<br>
+<li>
+<%= button_to "Edit Student Account", edit_student_path, class: "button is-info is-light" %>
+</li>
+<br>
+<li>
+<%= button_to "Enroll in a Course", new_grade_path, class: "button is-success"%>
+</li>
+<br>
+<li>
+<%= button_to "Delete Student", student_path(@student), method: "delete", class: "button is-danger"  %>
+</li>
+</ul>
+</nav>
 
-<br>
-<%= link_to "Edit Student", edit_student_path %>
-<br>
-<%= link_to "Enroll in a Course", new_grade_path%>
-<br>
-<%= button_to "Delete Student", student_path(@student), method: "delete" %>
 </html>

@@ -70,27 +70,21 @@
 <%end%>
 
 <%= form_for @grade do |f| %>
-
-    <div class="select">
-        <%= f.label :student_id, class: "label" %>
+    <div class="field">
+    <%= f.label :student_id, class: "label" %>
     <div class="control">
-        <%= f.collection_select :student_id, @students, :id, :name, class: "input"%>
+    <%= f.collection_select :student_id, @students, :id, :name, class: "select" %>
     </div>
     </div>
 
-    <div class="select">
-         <%= f.label :course_id, class: "label" %>
+    <div class="field">
+    <%= f.label :course_id, class: "label" %>
     <div class="control">
-        <%= f.collection_select :course_id, @courses, :id, :name, class: "input" %>
+    <%= f.collection_select :course_id, @courses, :id, :name, class: "input" %>
     </div>
     </div>
-    
     <%# <%= f.label :grade_value %>
     <%# <%= f.collection_select :grade_value, (1..10).to_a, :itself, :itself %>
-    <div class="field is-grouped">
-        <%= f.submit "Enroll", class: "button is-info"%>
-    </div>
 
+    <%= f.submit "Enroll"%>
 <% end %>
-
-</html>

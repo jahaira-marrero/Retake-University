@@ -49,10 +49,16 @@
             </nav>
         </div>
 
-   
 
-
-<h1> Student Form</h1>
+<div class="container">
+      <div class="section">
+        <div class="columns">
+          <div class="column has-text-centered">
+            <h1 class="title" style="color: black;">Student Registration Form</h1>
+          </div>
+        </div>
+    </div>
+</div>
 
 <% if flash[:errors]%>
     <ul>
@@ -66,18 +72,32 @@
 
 
 <%= form_for @student do |f| %>
-    <%= f.label :name, "Name"%>
-    <%= f.text_field :name %>
-    <%= f.label :age, "Age"%>
-    <%= f.number_field :age %>
-    <%= f.label :major, "Major" %>
-    <%= f.text_field :major %>
-    <%= f.submit %>
-<% end %>
 
-<br>
-<%= link_to "Back to Courses", courses_path %>
-<br>
-<%= link_to "Back to All Students", students_path %>
+<div class="field">
+    <%= f.label :name, "Name", class: "label"%>
+<div class="control">
+    <%= f.text_field :name, class: "input"%>
+</div>
+</div>
+
+<div class="field">
+    <%= f.label :age, "Age", class: "label"%>
+<div class="control">
+    <%= f.number_field :age, class: "input"%>
+</div>
+</div>
+
+<div class="field">
+    <%= f.label :major, "Major", class: "label" %>
+<div class="control">
+    <%= f.text_field :major, class: "input"%>
+</div>
+</div>
+
+<div class="field is-grouped">
+    <%= f.submit class: "button is-info" %>
+</div>
+
+<% end %>
 
 </html>

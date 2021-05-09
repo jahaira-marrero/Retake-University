@@ -60,14 +60,14 @@
     </div>
 </div>
 
-<h3>Seat Limit: <%= @course.seat_limit() %> </h3>
-<h3> Open Seats: <%= @course.open_seats %> </h3>
+<h4 class="subtitle is-4">Seat Limit: <%= @course.seat_limit() %> </h4>
+<h4 class="subtitle is-4"> Open Seats: <%= @course.open_seats %> </h4>
 <br>
-<h3>Instructor: <%= link_to @course.instructor.name, instructor_path(@course.instructor) %> </h3>
+<h4 class="subtitle is-4">Instructor: <%= link_to @course.instructor.name, instructor_path(@course.instructor) %> </h4>
 <br>
-<h3>Schedule: <%= @course.week_day %> - <%=@course.time %> </h3>
+<h4 class="title is-4">Schedule: <%= @course.week_day %> - <%=@course.time %>00 hrs </h4>
 <hr>
-<h2> Enrolled Students</h2>
+<h4 class="title is-4"> Enrolled Students</h4>
 <ol>
     <% @course.grades.each do |course_inst| %>
     <li>
@@ -77,6 +77,6 @@
 </ol>
 
 <br>
-<%= link_to "Enroll in a Course", new_grade_path%>
+<%= link_to "Enroll in a Course", new_grade_path, class: "button is-info"%>
 
 </html>
