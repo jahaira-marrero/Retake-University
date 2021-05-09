@@ -40,7 +40,6 @@
                                     <li><a href="/students">Students</a></li>
                                     <li><a href="/courses">Courses</a></li>
                                     <li><a href="/instructors">Instructors</a></li>
-                                    <li><a href="">Grades</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -49,7 +48,15 @@
             </nav>
         </div>
 
-<h1> <%= @student.name %> </h1>
+    <div class="container">
+      <div class="section">
+        <div class="columns">
+          <div class="column has-text-centered">
+            <h1 class="title" style="color: black;"><%= @student.name %>'s Student Account</h1>
+          </div>
+        </div>
+    </div>
+</div>
 
 <h2> Major - <%= @student.major %> </h2>
 <h2> Age - <%= @student.age %> </h2>
@@ -72,11 +79,7 @@
 <br>
 <%= link_to "Edit Student", edit_student_path %>
 <br>
-<%= link_to "Back to Students", students_path %>
-<br>
 <%= link_to "Enroll in a Course", new_grade_path%>
-<br>
-<%= link_to "Go to Courses", courses_path %>
 <br>
 <%= button_to "Delete Student", student_path(@student), method: "delete" %>
 </html>

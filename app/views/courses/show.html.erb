@@ -48,8 +48,18 @@
             </nav>
         </div>
 
-<h1> <%= @course.name %> Information </h1>
-<br>
+
+
+    <div class="container">
+      <div class="section">
+        <div class="columns">
+          <div class="column has-text-centered">
+            <h1 class="title" style="color: black;"><%= @course.name %> Course Information</h1>
+          </div>
+        </div>
+    </div>
+</div>
+
 <h3>Seat Limit: <%= @course.seat_limit() %> </h3>
 <h3> Open Seats: <%= @course.open_seats %> </h3>
 <br>
@@ -65,8 +75,7 @@
     </li>
     <% end %>
 </ol>
-<br>
-<%= link_to "Back to Courses", courses_path %>
+
 <br>
 <%= link_to "Enroll in a Course", new_grade_path%>
 
