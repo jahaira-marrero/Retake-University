@@ -93,12 +93,12 @@
 
 
 
-        <div id="app" class="row columns">
+        <div id="app" class="tile is-ancestor">
           <div v-for="card in cardData" key="card.id" class="column is-4">
             <div class="card large">
               <div class="card-image">
                 <figure class="image is-16by9">
-                  <img src="https://www.cnet.com/a/img/h7RTKvLKJe-ya09IPOH5WcvcAjU=/1200x675/2019/08/14/5c2d2265-1481-4aaf-8d65-202769fe09bd/resume-bitmoji-wsj.jpg" alt="Image">
+                  <img src=<%=instructor.image%> alt="Image">
                 </figure>
               </div>
               <div class="card-content">
@@ -109,7 +109,7 @@
                   </div>
                 </div>
                 <div class="content">
-                  {{card.content}}
+                 New York City Campus
                   <div class="background-icon"><span class="icon-twitter"></span></div>
                 </div>
               </div>

@@ -59,9 +59,17 @@
     </div>
 </div>
 
-<h4 class="title is-4">Instructor Name</h4> 
-    <%= @instructor.name %>     
+<div class=" columns is multiline is mobile">
+    <div class="column is-one-quarter">
+<h4 class="title is-4">Instructor</h4> 
+    <figure class="image is-128x128">
+    <img src="<%=@instructor.image %>">
+    </figure>
+   <h5 class="title is-6"> <%= @instructor.name %> </h5>
+    New York City Campus 
+    </div>  
 <hr>
+<div class="column">
 <h4 class="title is-4"> Courses </h4>
 
 <ul>
@@ -75,6 +83,7 @@
     <% @instructor.tutorings.each do |tutor|%>
         <h3> <%= tutor.week_day %> at <%= tutor.time %>:00 hours </h3>
     <% end %>
-
+    </div>
+</div>
 
 </html>
