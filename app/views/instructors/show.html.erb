@@ -41,7 +41,6 @@
                                     <li><a href="/students">Students</a></li>
                                     <li><a href="/courses">Courses</a></li>
                                     <li><a href="/instructors">Instructors</a></li>
-                                    <li><a href="">Grades</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -60,10 +59,10 @@
     </div>
 </div>
 
-<h3>Instructor Name: <%= @instructor.name %> </h3> 
-
+<h4 class="title is-4">Instructor Name</h4> 
+    <%= @instructor.name %>     
 <hr>
-<h4> <p>  Courses </p> </h4>
+<h4 class="title is-4"> Courses </h4>
 
 <ul>
     <% @instructor.courses.each do |instructor_inst| %>
@@ -71,11 +70,10 @@
     <%end%>
 
 </ul>
-
-<h2> Tutoring Schedule</h2>
 <hr>
+<h4 class="title is-4"> Tutoring Schedule</h4>
     <% @instructor.tutorings.each do |tutor|%>
-        <h3> <%= tutor.week_day %> at <%= tutor.time %> </h3>
+        <h3> <%= tutor.week_day %> at <%= tutor.time %>:00 hours </h3>
     <% end %>
 
 
