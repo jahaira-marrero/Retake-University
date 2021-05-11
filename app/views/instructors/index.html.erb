@@ -15,110 +15,74 @@
     <link rel="stylesheet" type="text/css" href="../css/hero.css">
     <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
     <style>
-    .columns:nth-child(3)
+    .columns:nth-child(4)
     {margin-top: -10rem;}
     </style>
   </head>
-  <body>
-           <div class="hero-head">
-            <nav class="navbar">
-                <div class="container">
-                    <div class="navbar-brand">
-                        <a class="navbar-item" href="../">
-                            <img src="https://coursereport-s3-production.global.ssl.fastly.net/uploads/school/logo/8/original/flatironschool.png" alt="Logo">
-                        </a>
-                        <span class="navbar-burger burger" data-target="navbarMenu">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
-                    </div>
-                    <div id="navbarMenu" class="navbar-menu">
-                        <div class="navbar-end">
-                            <div class="tabs is-right">
-                                <ul>
-                                    <li class="is-active"><a href="/home">Home</a></li>
-                                    <li><a href="/students">Students</a></li>
-                                    <li><a href="/courses">Courses</a></li>
-                                    <li><a href="/instructors">Instructors</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <body>
+      <div class="hero-head">
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="../">
+                <img src="https://coursereport-s3-production.global.ssl.fastly.net/uploads/school/logo/8/original/flatironschool.png" alt="Logo">
+              </a>
+                <span class="navbar-burger burger" data-target="navbarMenu">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+            </div>
+              <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-end">
+                  <div class="tabs is-right">
+                    <ul>
+                      <li class="is-active"><a href="/home">Home</a></li>
+                      <li><a href="/students">Students</a></li>
+                      <li><a href="/courses">Courses</a></li>
+                      <li><a href="/instructors">Instructors</a></li>
+                    </ul>
+                  </div>
                 </div>
-            </nav>
-        </div>
-
-    
-   
-    
-   
-
-      <div class="container">
+              </div>
+          </div>
+        </nav>
+      </div>
+    </body>
+    <div class="container">
       <div class="section">
         <div class="columns">
           <div class="column has-text-centered">
             <h1 class="title" style="color: black;">Retake University Instructors</h1><br>
           </div>
         </div>
-         <% @instructors.each do |instructor| %>
+      </div>
+    </div>
 
-<%# 
- <div class="sandbox">
-                <div class="tile is-ancestor">
-                    <div class="tile is-parent is-shady">
-                        <article class="tile is-child notification is-white">
-                            <p class="title">Hello World</p>
-                            <p class="subtitle">What is up?</p>
-                        </article>
-                    </div>
-                    <div class="tile is-parent is-shady">
-                        <article class="tile is-child notification is-white">
-                            <p class="title">Foo</p>
-                            <p class="subtitle">Bar</p>
-                        </article>
-                    </div>
-                    <div class="tile is-parent is-shady">
-                        <article class="tile is-child notification is-white">
-                            <p class="title">Third column</p>
-                            <p class="subtitle">With some content</p>
-                            <div class="content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
-                            </div>
-                        </article>
-                    </div>
-                </div> %>
-
-
-
-
-
-        <div id="app" class="tile is-ancestor">
-          <div v-for="card in cardData" key="card.id" class="column is-4">
-            <div class="card large">
-              <div class="card-image">
-                <figure class="image is-16by9">
-                  <img src=<%=instructor.image%> alt="Image">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-content">
-                    <p class="title is-4 no-padding"><%= link_to instructor.name, instructor_path(instructor) %></p>
-                    <p class="subtitle is-6">Lead Instructor</p>
-                  </div>
-                </div>
-                <div class="content">
-                 New York City Campus
-                  <div class="background-icon"><span class="icon-twitter"></span></div>
-                </div>
-              </div>
-            </div>
+<div class="columns">
+  <div class="column is-one-third">
+    <% @instructors.each do |instructor| %>
+      <div class="card large">
+        <figure class="image is-16by9">
+          <img src=<%=instructor.image%> alt="Image">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-content">
+            <p class="title is-4 no-padding"><%= link_to instructor.name, instructor_path(instructor) %></p>
           </div>
         </div>
-      </div>
-       <%end%>
+          <div class="content">
+            <p class="subtitle is-6">Lead Instructor</p>
+            <p>New York City Campus</p>
+          </div>
+        </div>
+         <%end%>
     </div>
+   
+  </div>
+</div>
 
     <script src="../js/cardsData.js"></script>
 
@@ -132,5 +96,5 @@
       })
 
     </script>
-  </body>
+ 
 </html>
